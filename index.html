@@ -6,249 +6,610 @@
     <title>Students Register App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/cSS 2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/style.css">
 </head>
-<body class="m-0 p-0 box-border bg-gray-100">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="general-container" class="w-full flex flex-col items-center"></div>
-        <div id="class-container" class="w-full flex flex-col items-center"></div>
-        <div id="graded-container" class="w-full flex flex-col items-center"></div>
-        <footer id="the-conclusion"></footer>
-    </div>
+<body>
+    <div id="general-container" class="w-full flex justify-center"></div>
+    <div id="class-container" class="w-full flex justify-center"></div>
+    <div id="graded-container" class="w-full flex justify-center"></div>
+    <footer id="the-conclusion"></footer>
     <script>
-        // Data
-        const studentsRegister = [
-            { name: "Samuel Adeyemi", class: "JSS1", score: 31 },
-            { name: "Rita Smith", class: "JSS1", score: 44 },
-            { name: "David Smith", class: "JSS1", score: 54 },
-            { name: "Paul Adeyemi", class: "JSS1", score: 99 },
-            { name: "James Okafor", class: "JSS1", score: 81 },
-            { name: "Amaka Okafor", class: "JSS2", score: 88 },
-            { name: "David Abubakar", class: "JSS2", score: 48 },
-            { name: "Amaka Johnson", class: "JSS2", score: 37 },
-            { name: "Joy Ibrahim", class: "JSS2", score: 93 },
-            { name: "Amaka Abubakar", class: "JSS2", score: 61 },
-            { name: "Joy Okafor", class: "JSS3", score: 71 },
-            { name: "Mary Uche", class: "JSS3", score: 49 },
-            { name: "John Ojo", class: "JSS3", score: 42 },
-            { name: "Rita Okafor", class: "JSS3", score: 30 },
-            { name: "Grace Johnson", class: "JSS3", score: 94 },
-            { name: "Rita Okafor", class: "SS1", score: 51 },
-            { name: "James Ibrahim", class: "SS1", score: 47 },
-            { name: "Joy Uche", class: "SS1", score: 87 },
-            { name: "Paul Abubakar", class: "SS1", score: 35 },
-            { name: "Samuel Ibrahim", class: "SS1", score: 92 },
-            { name: "Samuel Abubakar", class: "SS2", score: 80 },
-            { name: "David Adeyemi", class: "SS2", score: 99 },
-            { name: "Grace Ibrahim", class: "SS2", score: 42 },
-            { name: "Joy Ojo", class: "SS2", score: 66 },
-            { name: "Grace Abubakar", class: "SS2", score: 30 },
-            { name: "Grace Abubakar", class: "SS3", score: 61 },
-            { name: "Grace Ibrahim", class: "SS3", score: 67 },
-            { name: "James Ibrahim", class: "SS3", score: 30 },
-            { name: "Joy Ojo", class: "SS3", score: 87 },
-            { name: "John Abubakar", class: "SS3", score: 95 },
-        ];
+        let theBody = document.querySelector("body")
+        theBody.setAttribute("class", "m-0 p-0 box-border")
 
-        // Function to calculate grade
-        const getGrade = (score) => {
-            if (score >= 70 && score <= 100) return "A";
-            if (score >= 60 && score <= 69) return "B";
-            if (score >= 50 && score <= 59) return "C";
-            if (score >= 40 && score <= 49) return "D";
-            return "F";
-        };
+        let studentsRegister = [
+        { name: "Samuel Adeyemi", class: "JSS1", score: 31 },
+        { name: "Rita Smith", class: "JSS1", score: 44 },
+        { name: "David Smith", class: "JSS1", score: 54 },
+        { name: "Paul Adeyemi", class: "JSS1", score: 99 },
+        { name: "James Okafor", class: "JSS1", score: 81 },
+        { name: "Amaka Okafor", class: "JSS2", score: 88 },
+        { name: "David Abubakar", class: "JSS2", score: 48 },
+        { name: "Amaka Johnson", class: "JSS2", score: 37 },
+        { name: "Joy Ibrahim", class: "JSS2", score: 93 },
+        { name: "Amaka Abubakar", class: "JSS2", score: 61 },
+        { name: "Joy Okafor", class: "JSS3", score: 71 },
+        { name: "Mary Uche", class: "JSS3", score: 49 },
+        { name: "John Ojo", class: "JSS3", score: 42 },
+        { name: "Rita Okafor", class: "JSS3", score: 30 },
+        { name: "Grace Johnson", class: "JSS3", score: 94 },
+        { name: "Rita Okafor", class: "SS1", score: 51 },
+        { name: "James Ibrahim", class: "SS1", score: 47 },
+        { name: "Joy Uche", class: "SS1", score: 87 },
+        { name: "Paul Abubakar", class: "SS1", score: 35 },
+        { name: "Samuel Ibrahim", class: "SS1", score: 92 },
+        { name: "Samuel Abubakar", class: "SS2", score: 80 },
+        { name: "David Adeyemi", class: "SS2", score: 99 },
+        { name: "Grace Ibrahim", class: "SS2", score: 42 },
+        { name: "Joy Ojo", class: "SS2", score: 66 },
+        { name: "Grace Abubakar", class: "SS2", score: 30 },
+        { name: "Grace Abubakar", class: "SS3", score: 61 },
+        { name: "Grace Ibrahim", class: "SS3", score: 67 },
+        { name: "James Ibrahim", class: "SS3", score: 30 },
+        { name: "Joy Ojo", class: "SS3", score: 87 },
+        { name: "John Abubakar", class: "SS3", score: 95 },
+        ]
 
         // All Students
-        const generalContainer = document.querySelector("#general-container");
-        generalContainer.classList.add("py-12");
+        let generalContainer = document.querySelector("#general-container")
+        generalContainer.setAttribute("class", "py-12")
+        let title = document.createElement("h1")
+        title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        title.innerText = "School Register"
+        generalContainer.appendChild(title)
 
-        const title = document.createElement("h1");
-        title.className = "text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mx-auto";
-        title.innerText = "School Register";
-        generalContainer.appendChild(title);
+        // All Students Record
+        let allStudentsContainer = document.createElement("div")
+        allStudentsContainer.setAttribute("id", "allstuds")
+        allStudentsContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        generalContainer.appendChild(allStudentsContainer)
 
-        const allStudentsContainer = document.createElement("div");
-        allStudentsContainer.id = "allstuds";
-        allStudentsContainer.className = "my-10 overflow-x-auto w-full max-w-full px-4 sm:px-6";
-        generalContainer.appendChild(allStudentsContainer);
+        let allStudentsHTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let sn = 1
+        let totalScore = 0
 
-        let allStudentsHTML = `
-            <table class="w-full bg-white border border-gray-200 mx-auto">
-                <thead class="bg-gray-200 text-left text-sm font-semibold text-gray-700">
-                    <tr>
-                        <th class="px-4 py-2 border-b w-[5%]">S/N</th>
-                        <th class="px-4 py-2 border-b w-[45%]">Name</th>
-                        <th class="px-4 py-2 border-b w-[20%]">Class</th>
-                        <th class="px-4 py-2 border-b w-[15%]">Score</th>
-                        <th class="px-4 py-2 border-b w-[15%]">Grade</th>
-                    </tr>
-                </thead>
-                <tbody class="text-sm">
-        `;
-        let sn = 1;
-        let totalScore = 0;
+        studentsRegister.forEach((student, index) => {
 
-        studentsRegister.forEach((student) => {
-            const grade = getGrade(student.score);
-            allStudentsHTML += `
-                <tr class="hover:bg-gray-50">
-                    <td class="px-4 py-2 border-b">${sn++}.</td>
-                    <td class="px-4 py-2 border-b">${student.name}</td>
-                    <td class="px-4 py-2 border-b">${student.class}</td>
-                    <td class="px-4 py-2 border-b">${student.score}</td>
-                    <td class="px-4 py-2 border-b">${grade}</td>
-                </tr>
-            `;
-            totalScore += student.score;
-        });
+            let grade = ""
+            let score = student.score
 
-        allStudentsHTML += "</tbody></table>";
+            if (score >= 70 && score <= 100) {
+                grade = "A"
+            } else if (score >= 60 && score <= 69) {
+                grade = "B"
+            } else if (score >= 50 && score <= 59) {
+                grade = "C"
+            } else if (score >= 40 && score <= 49) {
+                grade = "D"
+            } else {
+                grade = "F"
+            }
 
-        const overallPerformance = Math.ceil((totalScore / (studentsRegister.length * 100)) * 100);
-        const overallSchoolScoreContainer = document.createElement("div");
-        overallSchoolScoreContainer.className = "text-center mt-4 text-sm sm:text-base";
-        overallSchoolScoreContainer.innerHTML = `<strong>Overall School Performance:</strong> ${overallPerformance}%`;
+            allStudentsHTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
 
-        const allstuds = document.getElementById("allstuds");
-        allstuds.innerHTML = allStudentsHTML;
-        allstuds.appendChild(overallSchoolScoreContainer);
+            totalScore += student.score
+        })
+
+        allStudentsHTML += "</tbody></table>"
+
+        let overallPerformance = Math.ceil(((totalScore / (100 * sn)) * 100 ))
+
+        let overallSchoolScoreContainer = document.createElement("div")
+        overallSchoolScoreContainer.innerHTML = `<strong>Overall School Performance:</strong> ${overallPerformance}%`
+
+        let allstuds = document.getElementById("allstuds")
+        allstuds.innerHTML = allStudentsHTML
+
+        allstuds.appendChild(overallSchoolScoreContainer)
 
         // Students By Class
-        const classContainer = document.querySelector("#class-container");
-        classContainer.classList.add("my-12");
+        let classContainer = document.querySelector("#class-container")
+        classContainer.setAttribute("class", "my-12")
+        let classTitle = document.createElement("h1")
+        classTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        classTitle.innerText = "School Register By Class"
+        classContainer.appendChild(classTitle)
 
-        const classTitle = document.createElement("h1");
-        classTitle.className = "text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mx-auto";
-        classTitle.innerText = "School Register By Class";
-        classContainer.appendChild(classTitle);
+        // JSS 1
+        let jss1title = document.createElement("h1")
+        jss1title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        jss1title.innerText = "JSS 1"
+        classContainer.appendChild(jss1title)
 
-        // Helper function to create class table
-        const createClassTable = (className, containerId, titleText) => {
-            const title = document.createElement("h2");
-            title.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center mx-auto mt-8";
-            title.innerText = titleText;
-            classContainer.appendChild(title);
+        let jss1Container = document.createElement("div")
+        jss1Container.setAttribute("id", "jss1Studs")
+        jss1Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        classContainer.appendChild(jss1Container)
 
-            const container = document.createElement("div");
-            container.id = containerId;
-            container.className = "my-10 overflow-x-auto w-full max-w-full px-4 sm:px-6";
-            classContainer.appendChild(container);
+        let jss1HTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
-            let html = `
-                <table class="w-full bg-white border border-gray-200 mx-auto">
-                    <thead class="bg-gray-200 text-left text-sm font-semibold text-gray-700">
-                        <tr>
-                            <th class="px-4 py-2 border-b w-[5%]">S/N</th>
-                            <th class="px-4 py-2 border-b w-[45%]">Name</th>
-                            <th class="px-4 py-2 border-b w-[20%]">Class</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Score</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm">
-            `;
-            let sn = 1;
+        let sn1 = 1
 
-            studentsRegister.forEach((student) => {
-                if (student.class === className) {
-                    const grade = getGrade(student.score);
-                    html += `
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2 border-b">${sn++}.</td>
-                            <td class="px-4 py-2 border-b">${student.name}</td>
-                            <td class="px-4 py-2 border-b">${student.class}</td>
-                            <td class="px-4 py-2 border-b">${student.score}</td>
-                            <td class="px-4 py-2 border-b">${grade}</td>
-                        </tr>
-                    `;
+        studentsRegister.forEach((student, index) => {
+
+            if (student.class === 'JSS1') {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
                 }
-            });
 
-            html += "</tbody></table>";
-            document.getElementById(containerId).innerHTML = html;
-        };
+                jss1HTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn1++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
 
-        createClassTable("JSS1", "jss1Studs", "JSS 1");
-        createClassTable("JSS2", "jss2Studs", "JSS 2");
-        createClassTable("JSS3", "jss3Studs", "JSS 3");
-        createClassTable("SS1", "ss1Studs", "SS 1");
-        createClassTable("SS2", "ss2Studs", "SS 2");
-        createClassTable("SS3", "ss3Studs", "SS 3");
+            }
+
+        })
+
+        jss1HTML += "</tbody></table>"
+
+        let jss1Studs = document.getElementById("jss1Studs")
+        jss1Studs.innerHTML = jss1HTML
+
+        // JSS 2
+        let jss2title = document.createElement("h1")
+        jss2title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        jss2title.innerText = "JSS 2"
+        classContainer.appendChild(jss2title)
+
+        let jss2Container = document.createElement("div")
+        jss2Container.setAttribute("id", "jss2Studs")
+        jss2Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        classContainer.appendChild(jss2Container)
+
+        let jss2HTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let sn2 = 1
+
+        studentsRegister.forEach((student, index) => {
+
+            if (student.class === 'JSS2') {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                jss2HTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn2++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+
+            }
+
+        })
+
+        jss2HTML += "</tbody></table>"
+
+        let jss2Studs = document.getElementById("jss2Studs")
+        jss2Studs.innerHTML = jss2HTML
+
+        // JSS 3
+        let jss3title = document.createElement("h1")
+        jss3title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        jss3title.innerText = "JSS 3"
+        classContainer.appendChild(jss3title)
+
+        let jss3Container = document.createElement("div")
+        jss3Container.setAttribute("id", "jss3Studs")
+        jss3Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        classContainer.appendChild(jss3Container)
+
+        let jss3HTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let sn3 = 1
+
+        studentsRegister.forEach((student, index) => {
+
+            if (student.class === 'JSS3') {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                jss3HTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn3++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+
+            }
+
+        })
+
+        jss3HTML += "</tbody></table>"
+
+        let jss3Studs = document.getElementById("jss3Studs")
+        jss3Studs.innerHTML = jss3HTML
+
+        // SS 1
+        let ss1title = document.createElement("h1")
+        ss1title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        ss1title.innerText = "SS 1"
+        classContainer.appendChild(ss1title)
+
+        let ss1Container = document.createElement("div")
+        ss1Container.setAttribute("id", "ss1Studs")
+        ss1Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        classContainer.appendChild(ss1Container)
+
+        let ss1HTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let sn4 = 1
+
+        studentsRegister.forEach((student, index) => {
+
+            if (student.class === 'SS1') {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                ss1HTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn4++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+
+            }
+
+        })
+
+        ss1HTML += "</tbody></table>"
+
+        let ss1Studs = document.getElementById("ss1Studs")
+        ss1Studs.innerHTML = ss1HTML
+
+        // SS 2
+        let ss2title = document.createElement("h1")
+        ss2title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        ss2title.innerText = "SS 2"
+        classContainer.appendChild(ss2title)
+
+        let ss2Container = document.createElement("div")
+        ss2Container.setAttribute("id", "ss2Studs")
+        ss2Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        classContainer.appendChild(ss2Container)
+
+        let ss2HTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let sn5 = 1
+
+        studentsRegister.forEach((student, index) => {
+
+            if (student.class === 'SS2') {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                ss2HTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn5++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+
+            }
+
+        })
+
+        ss2HTML += "</tbody></table>"
+
+        let ss2Studs = document.getElementById("ss2Studs")
+        ss2Studs.innerHTML = ss2HTML
+
+        // SS 3
+        let ss3title = document.createElement("h1")
+        ss3title.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        ss3title.innerText = "SS 3"
+        classContainer.appendChild(ss3title)
+
+        let ss3Container = document.createElement("div")
+        ss3Container.setAttribute("id", "ss3Studs")
+        ss3Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        classContainer.appendChild(ss3Container)
+
+        let ss3HTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let sn6 = 1
+
+        studentsRegister.forEach((student, index) => {
+
+            if (student.class === 'SS2') {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                ss3HTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${sn6++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+
+            }
+
+        })
+
+        ss3HTML += "</tbody></table>"
+
+        let ss3Studs = document.getElementById("ss3Studs")
+        ss3Studs.innerHTML = ss3HTML
 
         // Students By Grades
-        const gradeContainer = document.querySelector("#graded-container");
-        gradeContainer.classList.add("my-12");
+        let gradeContainer = document.querySelector("#class-container")
+        gradeContainer.setAttribute("class", "my-12")
+        let gradeTitle = document.createElement("h1")
+        gradeTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        gradeTitle.innerText = "School Register By Grades"
+        gradeContainer.appendChild(gradeTitle)
 
-        const gradeTitle = document.createElement("h1");
-        gradeTitle.className = "text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mx-auto";
-        gradeTitle.innerText = "School Register By Grades";
-        gradeContainer.appendChild(gradeTitle);
+        // Grade A
+        let aTitle = document.createElement("h1")
+        aTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        aTitle.innerText = "A Graders"
+        gradeContainer.appendChild(aTitle)
 
-        // Helper function to create grade table
-        const createGradeTable = (gradeLetter, containerId, titleText) => {
-            const title = document.createElement("h2");
-            title.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center mx-auto mt-8";
-            title.innerText = titleText;
-            gradeContainer.appendChild(title);
+        let aContainer = document.createElement("div")
+        aContainer.setAttribute("id", "aStuds")
+        aContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        gradeContainer.appendChild(aContainer)
 
-            const container = document.createElement("div");
-            container.id = containerId;
-            container.className = "my-10 overflow-x-auto w-full max-w-full px-4 sm:px-6";
-            gradeContainer.appendChild(container);
+        let aHTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
-            let html = `
-                <table class="w-full bg-white border border-gray-200 mx-auto">
-                    <thead class="bg-gray-200 text-left text-sm font-semibold text-gray-700">
-                        <tr>
-                            <th class="px-4 py-2 border-b w-[5%]">S/N</th>
-                            <th class="px-4 py-2 border-b w-[45%]">Name</th>
-                            <th class="px-4 py-2 border-b w-[20%]">Class</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Score</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm">
-            `;
-            let sn = 1;
+        let snA = 1
 
-            studentsRegister.forEach((student) => {
-                const grade = getGrade(student.score);
-                if (grade === gradeLetter) {
-                    html += `
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2 border-b">${sn++}.</td>
-                            <td class="px-4 py-2 border-b">${student.name}</td>
-                            <td class="px-4 py-2 border-b">${student.class}</td>
-                            <td class="px-4 py-2 border-b">${student.score}</td>
-                            <td class="px-4 py-2 border-b">${grade}</td>
-                        </tr>
-                    `;
+        studentsRegister.forEach((student, index) => {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
                 }
-            });
 
-            html += "</tbody></table>";
-            document.getElementById(containerId).innerHTML = html;
-        };
+                if (grade === "A") {
+                    aHTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${snA++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+                }
+        })
 
-        createGradeTable("A", "aStuds", "A Graders");
-        createGradeTable("B", "bStuds", "B Graders");
-        createGradeTable("C", "cStuds", "C Graders");
-        createGradeTable("D", "dStuds", "D Graders");
-        createGradeTable("F", "fStuds", "Failed");
+        aHTML += "</tbody></table>"
+
+        let aStuds = document.getElementById("aStuds")
+        aStuds.innerHTML = aHTML
+
+        // Grade B
+        let bTitle = document.createElement("h1")
+        bTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        bTitle.innerText = "B Graders"
+        gradeContainer.appendChild(bTitle)
+
+        let bContainer = document.createElement("div")
+        bContainer.setAttribute("id", "bStuds")
+        bContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        gradeContainer.appendChild(bContainer)
+
+        let bHTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let snB = 1
+
+        studentsRegister.forEach((student, index) => {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                if (grade === "B") {
+                    bHTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${snB++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+                }
+        })
+
+        bHTML += "</tbody></table>"
+
+        let bStuds = document.getElementById("bStuds")
+        bStuds.innerHTML = bHTML
+
+        // Grade C
+        let cTitle = document.createElement("h1")
+        cTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        cTitle.innerText = "C Graders"
+        gradeContainer.appendChild(cTitle)
+
+        let cContainer = document.createElement("div")
+        cContainer.setAttribute("id", "cStuds")
+        cContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        gradeContainer.appendChild(cContainer)
+
+        let cHTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let snC = 1
+
+        studentsRegister.forEach((student, index) => {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                if (grade === "C") {
+                    cHTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${snC++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+                }
+        })
+
+        cHTML += "</tbody></table>"
+
+        let cStuds = document.getElementById("cStuds")
+        cStuds.innerHTML = cHTML
+
+        // Grade D
+        let dTitle = document.createElement("h1")
+        dTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        dTitle.innerText = "D Graders"
+        gradeContainer.appendChild(dTitle)
+
+        let dContainer = document.createElement("div")
+        dContainer.setAttribute("id", "dStuds")
+        dContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        gradeContainer.appendChild(dContainer)
+
+        let dHTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let snD = 1
+
+        studentsRegister.forEach((student, index) => {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                if (grade === "D") {
+                    dHTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${snD++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+                }
+        })
+
+        dHTML += "</tbody></table>"
+
+        let dStuds = document.getElementById("dStuds")
+        dStuds.innerHTML = dHTML
+
+        // Grade F
+        let fTitle = document.createElement("h1")
+        fTitle.setAttribute("class", "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center")
+        fTitle.innerText = "Failed"
+        gradeContainer.appendChild(fTitle)
+
+        let fContainer = document.createElement("div")
+        fContainer.setAttribute("id", "fStuds")
+        fContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
+        gradeContainer.appendChild(fContainer)
+
+        let fHTML = "<table class='w-full bg-white border border-gray-200 mx-auto'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+
+        let snF = 1
+
+        studentsRegister.forEach((student, index) => {
+
+                let grade = ""
+                let score = student.score
+
+                if (score >= 70 && score <= 100) {
+                    grade = "A"
+                } else if (score >= 60 && score <= 69) {
+                    grade = "B"
+                } else if (score >= 50 && score <= 59) {
+                    grade = "C"
+                } else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                } else {
+                    grade = "F"
+                }
+
+                if (grade === "F") {
+                    fHTML += `<tr class='hover:bg-gray-50'><td class='px-4 py-2 border-b'>${snF++}.</td><td class='px-4 py-2 border-b'>${student.name}</td><td class='px-4 py-2 border-b'>${student.class}</td><td class='px-4 py-2 border-b'>${student.score}</td><td class='px-4 py-2 border-b'>${grade}</td></tr>`
+                }
+        })
+
+        fHTML += "</tbody></table>"
+
+        let fStuds = document.getElementById("fStuds")
+        fStuds.innerHTML = fHTML
 
         // Footer
-        const theConclusion = document.querySelector("#the-conclusion");
-        theConclusion.className = "my-6 text-center text-base sm:text-lg text-gray-600";
-        theConclusion.innerText = "Link to my GitHub repo? ";
-        const footnote = document.createElement("a");
-        footnote.href = "https://github.com/dgplang/students-register";
-        footnote.className = "text-blue-600 hover:underline";
-        footnote.target = "_blank";
-        footnote.rel = "noopener noreferrer";
-        footnote.innerText = "Click Here";
-        theConclusion.appendChild(footnote);
+        let theConclusion = document.querySelector("#the-conclusion")
+        theConclusion.setAttribute("class", "my-6 text-center text-xl text-gray-600")
+        theConclusion.innerText = "Link to my GitHub repo? "
+        let footnote = document.createElement("a")
+        footnote.setAttribute("href", "https://github.com/dgplang/students-register")
+        footnote.setAttribute("class", "text-blue-600 hover:underline")
+        footnote.setAttribute("target", "_blank")
+        footnote.setAttribute("rel", "noopener noreferrer")
+        footnote.innerText = "Click Here"
+        theConclusion.appendChild(footnote)
     </script>
 </body>
 </html>
