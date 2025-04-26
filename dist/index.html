@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/cSS 2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="general-container" class=""></div>
-    <div id="class-container"></div>
-    <div id="graded-container"></div>
+    <div id="general-container" class="container mx-auto overflow-x-auto"></div>
+    <div id="class-container" class="container mx-auto overflow-x-auto"></div>
+    <div id="graded-container" class="container mx-auto overflow-x-auto"></div>
     <footer id="the-conclusion"></footer>
     <script>
         let theBody = document.querySelector("body")
@@ -65,7 +65,7 @@
         allStudentsContainer.setAttribute("class", "mx-24 my-10")
         generalContainer.appendChild(allStudentsContainer)
 
-        let allStudentsHTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let allStudentsHTML = "<table class='min-w-full'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
         let sn = 1
         let totalScore = 0
 
