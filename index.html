@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/cSS 2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="general-container" class="container mx-auto overflow-x-auto"></div>
+    <div id="general-container" class="w-full flex justify-center "></div>
     <div id="class-container" class="container mx-auto overflow-x-auto"></div>
     <div id="graded-container" class="container mx-auto overflow-x-auto"></div>
     <footer id="the-conclusion"></footer>
@@ -62,10 +62,10 @@
         // All Students Record
         let allStudentsContainer = document.createElement("div")
         allStudentsContainer.setAttribute("id", "allstuds")
-        allStudentsContainer.setAttribute("class", "mx-24 my-10")
+        allStudentsContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         generalContainer.appendChild(allStudentsContainer)
 
-        let allStudentsHTML = "<table class='min-w-full'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let allStudentsHTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
         let sn = 1
         let totalScore = 0
 
@@ -119,10 +119,10 @@
 
         let jss1Container = document.createElement("div")
         jss1Container.setAttribute("id", "jss1Studs")
-        jss1Container.setAttribute("class", "mx-24 my-10")
+        jss1Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         classContainer.appendChild(jss1Container)
 
-        let jss1HTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let jss1HTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let sn1 = 1
 
@@ -164,10 +164,10 @@
 
         let jss2Container = document.createElement("div")
         jss2Container.setAttribute("id", "jss2Studs")
-        jss2Container.setAttribute("class", "mx-24 my-10")
+        jss2Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         classContainer.appendChild(jss2Container)
 
-        let jss2HTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let jss2HTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let sn2 = 1
 
@@ -209,10 +209,10 @@
 
         let jss3Container = document.createElement("div")
         jss3Container.setAttribute("id", "jss3Studs")
-        jss3Container.setAttribute("class", "mx-24 my-10")
+        jss3Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         classContainer.appendChild(jss3Container)
 
-        let jss3HTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let jss3HTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let sn3 = 1
 
@@ -254,10 +254,10 @@
 
         let ss1Container = document.createElement("div")
         ss1Container.setAttribute("id", "ss1Studs")
-        ss1Container.setAttribute("class", "mx-24 my-10")
+        ss1Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         classContainer.appendChild(ss1Container)
 
-        let ss1HTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let ss1HTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let sn4 = 1
 
@@ -299,10 +299,10 @@
 
         let ss2Container = document.createElement("div")
         ss2Container.setAttribute("id", "ss2Studs")
-        ss2Container.setAttribute("class", "mx-24 my-10")
+        ss2Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         classContainer.appendChild(ss2Container)
 
-        let ss2HTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let ss2HTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let sn5 = 1
 
@@ -344,10 +344,10 @@
 
         let ss3Container = document.createElement("div")
         ss3Container.setAttribute("id", "ss3Studs")
-        ss3Container.setAttribute("class", "mx-24 my-10")
+        ss3Container.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         classContainer.appendChild(ss3Container)
 
-        let ss3HTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let ss3HTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let sn6 = 1
 
@@ -397,10 +397,10 @@
 
         let aContainer = document.createElement("div")
         aContainer.setAttribute("id", "aStuds")
-        aContainer.setAttribute("class", "mx-24 my-10")
+        aContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         gradeContainer.appendChild(aContainer)
 
-        let aHTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let aHTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let snA = 1
 
@@ -439,10 +439,10 @@
 
         let bContainer = document.createElement("div")
         bContainer.setAttribute("id", "bStuds")
-        bContainer.setAttribute("class", "mx-24 my-10")
+        bContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         gradeContainer.appendChild(bContainer)
 
-        let bHTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let bHTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let snB = 1
 
@@ -481,10 +481,10 @@
 
         let cContainer = document.createElement("div")
         cContainer.setAttribute("id", "cStuds")
-        cContainer.setAttribute("class", "mx-24 my-10")
+        cContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         gradeContainer.appendChild(cContainer)
 
-        let cHTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let cHTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let snC = 1
 
@@ -523,10 +523,10 @@
 
         let dContainer = document.createElement("div")
         dContainer.setAttribute("id", "dStuds")
-        dContainer.setAttribute("class", "mx-24 my-10")
+        dContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         gradeContainer.appendChild(dContainer)
 
-        let dHTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let dHTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let snD = 1
 
@@ -565,10 +565,10 @@
 
         let fContainer = document.createElement("div")
         fContainer.setAttribute("id", "fStuds")
-        fContainer.setAttribute("class", "mx-24 my-10")
+        fContainer.setAttribute("class", "mx-24 my-10 overflow-x-auto w-full max-w-full")
         gradeContainer.appendChild(fContainer)
 
-        let fHTML = "<table class='min-w-fit'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
+        let fHTML = "<table class='<table class='w-full bg-white border border-gray-200 mx-auto'>'><tr class='bg-gray-200 text-left text-sm font-semibold text-gray-700'><th class='px-4 py-2 border-b w-[5%]'>S/N</th><th class='px-4 py-2 border-b w-[45%]'>Name</th><th class='px-4 py-2 border-b w-[20%]'>Class</th><th class='px-4 py-2 border-b W-[15%]'>Score</th><th class='px-4 py-2 border-b W-[15%]'>Grade</th></tr><tbody class='text-sm'>"
 
         let snF = 1
 
