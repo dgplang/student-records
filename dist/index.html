@@ -7,14 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- Replace CDN with your /dist/style.css in production -->
+    <link rel="stylesheet" href="/dist/style.css">
+    <style>
+        /* Ensure global resets and font application */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto Flex', sans-serif;
+        }
+        /* Force tables to stay within viewport */
+        table {
+            max-width: 100% !important;
+        }
+    </style>
 </head>
-<body class="m-0 p-0 box-border bg-gray-100">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="general-container" class="w-full flex flex-col items-center"></div>
-        <div id="class-container" class="w-full flex flex-col items-center"></div>
-        <div id="graded-container" class="w-full flex flex-col items-center"></div>
-        <footer id="the-conclusion"></footer>
+<body class="bg-gray-100">
+    <!-- Main container with responsive padding and centering -->
+    <div class="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div id="general-container" class="w-full flex flex-col items-center justify-center py-8"></div>
+        <div id="class-container" class="w-full flex flex-col items-center justify-center py-8"></div>
+        <div id="graded-container" class="w-full flex flex-col items-center justify-center py-8"></div>
+        <footer id="the-conclusion" class="my-6 text-center text-sm sm:text-base text-gray-600"></footer>
     </div>
     <script>
         // Data
@@ -62,30 +79,28 @@
 
         // All Students
         const generalContainer = document.querySelector("#general-container");
-        generalContainer.classList.add("py-12");
-
         const title = document.createElement("h1");
-        title.className = "text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mx-auto";
+        title.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center w-full mx-auto mb-4";
         title.innerText = "School Register";
         generalContainer.appendChild(title);
 
         const allStudentsContainer = document.createElement("div");
         allStudentsContainer.id = "allstuds";
-        allStudentsContainer.className = "my-10 overflow-x-auto w-full max-w-full px-4 sm:px-6";
+        allStudentsContainer.className = "my-6 overflow-x-auto w-full max-w-full px-2 sm:px-4";
         generalContainer.appendChild(allStudentsContainer);
 
         let allStudentsHTML = `
-            <table class="w-full bg-white border border-gray-200 mx-auto">
-                <thead class="bg-gray-200 text-left text-sm font-semibold text-gray-700">
+            <table class="w-full bg-white border border-gray-200 mx-auto table-auto">
+                <thead class="bg-gray-200 text-left text-xs sm:text-sm font-semibold text-gray-700">
                     <tr>
-                        <th class="px-4 py-2 border-b w-[5%]">S/N</th>
-                        <th class="px-4 py-2 border-b w-[45%]">Name</th>
-                        <th class="px-4 py-2 border-b w-[20%]">Class</th>
-                        <th class="px-4 py-2 border-b w-[15%]">Score</th>
-                        <th class="px-4 py-2 border-b w-[15%]">Grade</th>
+                        <th class="px-2 sm:px-4 py-2 border-b w-[5%]">S/N</th>
+                        <th class="px-2 sm:px-4 py-2 border-b w-[45%]">Name</th>
+                        <th class="px-2 sm:px-4 py-2 border-b w-[20%]">Class</th>
+                        <th class="px-2 sm:px-4 py-2 border-b w-[15%]">Score</th>
+                        <th class="px-2 sm:px-4 py-2 border-b w-[15%]">Grade</th>
                     </tr>
                 </thead>
-                <tbody class="text-sm">
+                <tbody class="text-xs sm:text-sm">
         `;
         let sn = 1;
         let totalScore = 0;
@@ -94,11 +109,11 @@
             const grade = getGrade(student.score);
             allStudentsHTML += `
                 <tr class="hover:bg-gray-50">
-                    <td class="px-4 py-2 border-b">${sn++}.</td>
-                    <td class="px-4 py-2 border-b">${student.name}</td>
-                    <td class="px-4 py-2 border-b">${student.class}</td>
-                    <td class="px-4 py-2 border-b">${student.score}</td>
-                    <td class="px-4 py-2 border-b">${grade}</td>
+                    <td class="px-2 sm:px-4 py-2 border-b">${sn++}.</td>
+                    <td class="px-2 sm:px-4 py-2 border-b">${student.name}</td>
+                    <td class="px-2 sm:px-4 py-2 border-b">${student.class}</td>
+                    <td class="px-2 sm:px-4 py-2 border-b">${student.score}</td>
+                    <td class="px-2 sm:px-4 py-2 border-b">${grade}</td>
                 </tr>
             `;
             totalScore += student.score;
@@ -108,7 +123,7 @@
 
         const overallPerformance = Math.ceil((totalScore / (studentsRegister.length * 100)) * 100);
         const overallSchoolScoreContainer = document.createElement("div");
-        overallSchoolScoreContainer.className = "text-center mt-4 text-sm sm:text-base";
+        overallSchoolScoreContainer.className = "text-center mt-4 text-xs sm:text-sm";
         overallSchoolScoreContainer.innerHTML = `<strong>Overall School Performance:</strong> ${overallPerformance}%`;
 
         const allstuds = document.getElementById("allstuds");
@@ -117,37 +132,35 @@
 
         // Students By Class
         const classContainer = document.querySelector("#class-container");
-        classContainer.classList.add("my-12");
-
         const classTitle = document.createElement("h1");
-        classTitle.className = "text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mx-auto";
+        classTitle.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center w-full mx-auto mb-4";
         classTitle.innerText = "School Register By Class";
         classContainer.appendChild(classTitle);
 
         // Helper function to create class table
         const createClassTable = (className, containerId, titleText) => {
             const title = document.createElement("h2");
-            title.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center mx-auto mt-8";
+            title.className = "text-sm sm:text-base md:text-lg lg:text-xl font-bold text-center w-full mx-auto mt-6 mb-4";
             title.innerText = titleText;
             classContainer.appendChild(title);
 
             const container = document.createElement("div");
             container.id = containerId;
-            container.className = "my-10 overflow-x-auto w-full max-w-full px-4 sm:px-6";
+            container.className = "my-6 overflow-x-auto w-full max-w-full px-2 sm:px-4";
             classContainer.appendChild(container);
 
             let html = `
-                <table class="w-full bg-white border border-gray-200 mx-auto">
-                    <thead class="bg-gray-200 text-left text-sm font-semibold text-gray-700">
+                <table class="w-full bg-white border border-gray-200 mx-auto table-auto">
+                    <thead class="bg-gray-200 text-left text-xs sm:text-sm font-semibold text-gray-700">
                         <tr>
-                            <th class="px-4 py-2 border-b w-[5%]">S/N</th>
-                            <th class="px-4 py-2 border-b w-[45%]">Name</th>
-                            <th class="px-4 py-2 border-b w-[20%]">Class</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Score</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Grade</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[5%]">S/N</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[45%]">Name</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[20%]">Class</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[15%]">Score</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[15%]">Grade</th>
                         </tr>
                     </thead>
-                    <tbody class="text-sm">
+                    <tbody class="text-xs sm:text-sm">
             `;
             let sn = 1;
 
@@ -156,11 +169,11 @@
                     const grade = getGrade(student.score);
                     html += `
                         <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2 border-b">${sn++}.</td>
-                            <td class="px-4 py-2 border-b">${student.name}</td>
-                            <td class="px-4 py-2 border-b">${student.class}</td>
-                            <td class="px-4 py-2 border-b">${student.score}</td>
-                            <td class="px-4 py-2 border-b">${grade}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${sn++}.</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${student.name}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${student.class}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${student.score}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${grade}</td>
                         </tr>
                     `;
                 }
@@ -179,37 +192,35 @@
 
         // Students By Grades
         const gradeContainer = document.querySelector("#graded-container");
-        gradeContainer.classList.add("my-12");
-
         const gradeTitle = document.createElement("h1");
-        gradeTitle.className = "text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mx-auto";
+        gradeTitle.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center w-full mx-auto mb-4";
         gradeTitle.innerText = "School Register By Grades";
         gradeContainer.appendChild(gradeTitle);
 
         // Helper function to create grade table
         const createGradeTable = (gradeLetter, containerId, titleText) => {
             const title = document.createElement("h2");
-            title.className = "text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center mx-auto mt-8";
+            title.className = "text-sm sm:text-base md:text-lg lg:text-xl font-bold text-center w-full mx-auto mt-6 mb-4";
             title.innerText = titleText;
             gradeContainer.appendChild(title);
 
             const container = document.createElement("div");
             container.id = containerId;
-            container.className = "my-10 overflow-x-auto w-full max-w-full px-4 sm:px-6";
+            container.className = "my-6 overflow-x-auto w-full max-w-full px-2 sm:px-4";
             gradeContainer.appendChild(container);
 
             let html = `
-                <table class="w-full bg-white border border-gray-200 mx-auto">
-                    <thead class="bg-gray-200 text-left text-sm font-semibold text-gray-700">
+                <table class="w-full bg-white border border-gray-200 mx-auto table-auto">
+                    <thead class="bg-gray-200 text-left text-xs sm:text-sm font-semibold text-gray-700">
                         <tr>
-                            <th class="px-4 py-2 border-b w-[5%]">S/N</th>
-                            <th class="px-4 py-2 border-b w-[45%]">Name</th>
-                            <th class="px-4 py-2 border-b w-[20%]">Class</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Score</th>
-                            <th class="px-4 py-2 border-b w-[15%]">Grade</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[5%]">S/N</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[45%]">Name</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[20%]">Class</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[15%]">Score</th>
+                            <th class="px-2 sm:px-4 py-2 border-b w-[15%]">Grade</th>
                         </tr>
                     </thead>
-                    <tbody class="text-sm">
+                    <tbody class="text-xs sm:text-sm">
             `;
             let sn = 1;
 
@@ -218,11 +229,11 @@
                 if (grade === gradeLetter) {
                     html += `
                         <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2 border-b">${sn++}.</td>
-                            <td class="px-4 py-2 border-b">${student.name}</td>
-                            <td class="px-4 py-2 border-b">${student.class}</td>
-                            <td class="px-4 py-2 border-b">${student.score}</td>
-                            <td class="px-4 py-2 border-b">${grade}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${sn++}.</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${student.name}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${student.class}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${student.score}</td>
+                            <td class="px-2 sm:px-4 py-2 border-b">${grade}</td>
                         </tr>
                     `;
                 }
@@ -240,7 +251,6 @@
 
         // Footer
         const theConclusion = document.querySelector("#the-conclusion");
-        theConclusion.className = "my-6 text-center text-base sm:text-lg text-gray-600";
         theConclusion.innerText = "Link to my GitHub repo? ";
         const footnote = document.createElement("a");
         footnote.href = "https://github.com/dgplang/students-register";
