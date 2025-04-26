@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/dist/style.css">
 </head>
 <body>
-    <div id="general-container"></div>
+    <div id="general-container" class=""></div>
     <div id="class-container"></div>
     <div id="graded-container"></div>
     <footer id="the-conclusion"></footer>
@@ -54,10 +54,10 @@
         // All Students
 
         let generalContainer = document.querySelector("#general-container")
-        generalContainer.setAttribute("class", "my-12")
+        generalContainer.setAttribute("class", "py-12")
         let title = document.createElement("h1")
-        title.setAttribute("class", "text-center text-3xl")
-        title.innerText = "End-of-Term General Report"
+        title.setAttribute("class", "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center")
+        title.innerText = "School Register"
         generalContainer.appendChild(title)
 
         // All Students Record
@@ -108,8 +108,8 @@
         let classContainer = document.querySelector("#class-container")
         classContainer.setAttribute("class", "my-12")
         let classTitle = document.createElement("h1")
-        classTitle.setAttribute("class", "text-center text-3xl")
-        classTitle.innerText = "End-of-Term Report by Class"
+        classTitle.setAttribute("class", "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center")
+        classTitle.innerText = "School Register By Class"
         classContainer.appendChild(classTitle)
 
         // JSS 1
@@ -386,8 +386,8 @@
         let gradeContainer = document.querySelector("#class-container")
         gradeContainer.setAttribute("class", "my-12")
         let gradeTitle = document.createElement("h1")
-        gradeTitle.setAttribute("class", "text-center text-3xl")
-        gradeTitle.innerText = "End-of-Term Report by Grades"
+        gradeTitle.setAttribute("class", "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center")
+        gradeTitle.innerText = "School Register By Grades"
         gradeContainer.appendChild(gradeTitle)
 
         // Grade A
@@ -612,12 +612,5 @@
         footnote.innerText = "Click Here"
         theConclusion.appendChild(footnote)
     </script>
-
-    <!-- <footer class="my-6 text-center text-xl text-gray-600">
-        GitHub Repo: 
-        <a href="https://github.com/dgplang/students-register" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-          Click Here
-        </a>
-    </footer> -->
 </body>
 </html>
